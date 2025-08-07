@@ -1,0 +1,74 @@
+
+TypeScript Project Setup Guide 
+-- 📁 Folder Structure
+my-ts-project/
+│
+├── src/
+│   └── demo_classes.ts
+│
+├── dist/
+│   └── (compiled .js files will go here)
+│
+├── tsconfig.json
+├── package.json
+
+---
+
+ Step-by-Step Setup
+
+Step 1. Create a Project Folder
+mkdir my-ts-project
+cd my-ts-project
+
+Step 2. Initialize Node.js Project
+npm init -y
+
+Step 3. Install TypeScript Locally (Best Practice)
+npm install --save-dev typescript
+
+Step 4. Create tsconfig.json
+npx tsc --init
+
+Then replace its contents with:
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
+
+Step 5. Create Folder Structure
+mkdir src
+
+Step 6. Add Your TypeScript File
+// src/demo_classes.ts
+
+class Student {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    greet() {
+        console.log(`Hello,  ${this.name}`);
+    }
+}
+
+const s1 = new Student("John");
+s1.greet();
+
+Step 7. Compile the Project
+npx tsc
+
+Step 8. Run the Compiled Code
+node dist/demo_classes.js
+
+---
+Use this link to download this file: https://limewire.com/d/yIquR#iVOdi6GANZ
